@@ -9,11 +9,11 @@ def connectToWifiAndUpdate():
     if not sta_if.isconnected():
         print('connecting to network...')
         sta_if.active(True)
-        sta_if.connect(secrets.WIFI_SSID, secrets.WIFI_PASSWORD)
+        sta_if.connect(secrets.UPDATE_WIFI_SSID, secrets.UPDATE_WIFI_PASSWORD)
         while not sta_if.isconnected():
             pass
     print('network config:', sta_if.ifconfig())
-    otaUpdater = OTAUpdater('https://github.com/wichur/Wi.Rptt.Mp', github_src_dir='src', main_dir='app', secrets_file="secrets.py")
+    otaUpdater = OTAUpdater(secrets.UPDATE_REPO, github_src_dir='src', main_dir='app', secrets_file="secrets.py")
     hasUpdated = otaUpdater.install_update_if_available()
     if hasUpdated:
         machine.reset()
@@ -23,7 +23,6 @@ def connectToWifiAndUpdate():
 
 def startApp():
     import app.start
-
 
 connectToWifiAndUpdate()
 startApp()
