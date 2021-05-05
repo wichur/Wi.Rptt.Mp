@@ -1,6 +1,6 @@
 # boot.py - - runs on boot-up
 import app
-import secrets
+import app.secrets as secrets
 from app.ota_updater import OTAUpdater
 
 def download_and_install_update_if_available():
