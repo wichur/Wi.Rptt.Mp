@@ -1,10 +1,10 @@
 # boot.py - - runs on boot-up
-import app
+import ota
 import secrets
-from app.ota_updater import OTAUpdater
+from ota.ota_updater import OTAUpdater
 
 def download_and_install_update_if_available():
-    o = OTAUpdater('https://github.com/wichur/Wi.Rptt.Mp', headers={main_dir='app', secrets_file="secrets.py")
+    o = OTAUpdater('https://github.com/wichur/Wi.Rptt.Mp', main_dir='app', secrets_file="secrets.py")
     o.install_update_if_available_after_boot(
         secrets.WIFI_SSID, secrets.WIFI_PASSWORD)
 
