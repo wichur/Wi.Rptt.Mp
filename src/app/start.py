@@ -1,1 +1,1 @@
-print('hello');
+print('Version 2 installed using USB') 
