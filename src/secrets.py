@@ -1,3 +1,3 @@
 WIFI_SSID='10001'
 WIFI_PASSWORD='@200SzalonychGodzin'
-TOKEN='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'
+TOKEN='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'
