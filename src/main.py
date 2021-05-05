@@ -1,4 +1,4 @@
-# boot.py - - runs on boot-up
+# boot.py - - runs on boot-upxxx
 import app
 import app.secrets as secrets
 from app.ota_updater import OTAUpdater
